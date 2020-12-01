@@ -1,0 +1,9 @@
+{% if greeting_list %}
+    <ul>
+    {% for greeting in greeting_list %}
+        <li>{{ greeting.message }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No greetings are available.</p>
+{% endif %}
