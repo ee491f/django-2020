@@ -19,3 +19,14 @@ class CreateView(generic.edit.CreateView):
     model = Greeting
     fields = ['message']
     success_url = reverse_lazy('greetings:index') # more robust than hardcoding to /greetings/; directs user to index view after creating a greeting
+
+class UpdateView(generic.edit.UpdateView):
+    template_name = 'greetings/update.html'
+    model = Greeting
+    fields = ['message']
+    success_url = reverse_lazy('greetings:index')
+
+class DeleteView(generic.edit.DeleteView):
+    template_name = 'greetings/delete.html' # override default of greetings/greeting_confirm_delete.html
+    model = Greeting
+    success_url = reverse_lazy('greetings:index')
