@@ -11,6 +11,8 @@ services:
       - app.env # configure django to connect to database
     volumes:
       - .:/usr/src/app/
+    depends_on:
+      - database
 
   database:
     image: "postgres" # use latest official postgres version
